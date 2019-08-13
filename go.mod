@@ -1,3 +1,3 @@
-module github.com/cybersamx/PuzzleExercises
+module github.com/cybersamx/puzzle-go
 
 go 1.12
