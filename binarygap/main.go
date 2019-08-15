@@ -37,7 +37,7 @@ func binarygap(n int) int {
 }
 
 func main() {
-	numbers :=  []int{ 0, 1, 15, 17, 84, 256, 33473, 7845500 }
+	numbers :=  []int{ 0, 1, 15, 17, 18, 20, 84, 256, 33473, 7845500 }
 
 	for _, n := range numbers {
 		count := binarygap(n)
