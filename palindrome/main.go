@@ -13,7 +13,7 @@ func isPalindrome(s string) bool {
 	var j int
 	mid := int(length / 2)
 
-	if length % 2 == 0 {
+	if length%2 == 0 {
 		// Even
 		i = mid
 		j = mid - 1

@@ -10,14 +10,14 @@ func isRotated(s1 string, s2 string) bool {
 
 	// Split the string into 2 substrings, swap/concatenate the 2
 	// substrings and then compare
-	for i := 0; i < len(s1); i++ {
+	for i := 0; i < len(s2); i++ {
 		// Split the string into 2 substrings
-		a := s1[i:]
-		b := s1[:i]
+		a := s2[i:]
+		b := s2[:i]
 
 		// Form a concatenated string
-		ba := a + b
-		if ba == s1 {
+		ab := a + b
+		if ab == s1 {
 			return true
 		}
 	}
@@ -36,9 +36,9 @@ func main() {
 	}
 
 	negatives := map[string]string{
-		"": "rotation",
+		"":       "rotation",
 		"assign": "rotation",
-		"shift": "rotation",
+		"shift":  "rotation",
 	}
 
 	for k, v := range positives {

@@ -21,9 +21,9 @@ func newSampleTree() *TreeNode {
 	d := TreeNode{Left: nil, Right: nil, Value: "D"}
 	e := TreeNode{Left: nil, Right: nil, Value: "E"}
 	f := TreeNode{Left: nil, Right: nil, Value: "F"}
-	b := TreeNode{Left: &d,  Right: &e,  Value: "B"}
-	c := TreeNode{Left: &f,  Right: nil, Value: "C"}
-	a := TreeNode{Left: &b,  Right: &c,  Value: "A"}
+	b := TreeNode{Left: &d, Right: &e, Value: "B"}
+	c := TreeNode{Left: &f, Right: nil, Value: "C"}
+	a := TreeNode{Left: &b, Right: &c, Value: "A"}
 
 	return &a
 }

@@ -1,13 +1,13 @@
 package main
 
 type Queue struct {
-	First *QueueNode
-	Last *QueueNode
+	First  *QueueNode
+	Last   *QueueNode
 	Length int
 }
 
 type QueueNode struct {
-	Next *QueueNode
+	Next  *QueueNode
 	Value *TreeNode
 }
 

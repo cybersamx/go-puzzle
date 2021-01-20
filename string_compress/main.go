@@ -11,7 +11,7 @@ func compress(str string) string {
 	count := 1
 
 	for i, ch := range runes {
-		if i < len(runes) - 1 {
+		if i < len(runes)-1 {
 			// Look 1 character ahead (but not the last one)
 			c := runes[i+1]
 			if c != ch {

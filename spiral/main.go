@@ -22,14 +22,14 @@ func newTestMatrices() [][][]int {
 	}
 
 	var matrix4 = [][]int{
-		{ 1,  2,  3,  4},
-		{12, 13, 14,  5},
-		{11, 16, 15,  6},
-		{10,  9,  8,  7},
+		{1, 2, 3, 4},
+		{12, 13, 14, 5},
+		{11, 16, 15, 6},
+		{10, 9, 8, 7},
 	}
 
 	var matrix5 = [][]int{
-		{ 1,  2,  3,  4, 5},
+		{1, 2, 3, 4, 5},
 		{16, 17, 18, 19, 6},
 		{15, 24, 25, 20, 7},
 		{14, 23, 22, 21, 8},
@@ -53,7 +53,7 @@ func checkSquareMatri(matrix [][]int) bool {
 	}
 
 	width := len(matrix[0])
-	for row, _ := range matrix {
+	for row := range matrix {
 		if row > 0 && width != len(matrix[row]) {
 			return false
 		}
@@ -79,35 +79,35 @@ func spiralTraverse(matrix [][]int) {
 	col := 0
 	row := 0
 
-	for i := 0; i < width + height - 1; i++ {
+	for i := 0; i < width+height-1; i++ {
 		n := i % 4
 
 		if n == 0 {
 			// Left to right
 			col = i / 4
 			row = i / 4
-			for ; col < width - i / 4; col++ {
+			for ; col < width-i/4; col++ {
 				fmt.Printf("%d ", matrix[row][col])
 			}
 		} else if n == 1 {
 			// Top to bottom
-			col = width - i / 4 - 1
-			row = i / 4 + 1
-			for ; row < height - i / 4; row++ {
+			col = width - i/4 - 1
+			row = i/4 + 1
+			for ; row < height-i/4; row++ {
 				fmt.Printf("%d ", matrix[row][col])
 			}
 		} else if n == 2 {
 			// Right to left
-			col = width - i / 4 - 2
-			row = height - i / 4 - 1
-			for ; col >= i / 4; col-- {
+			col = width - i/4 - 2
+			row = height - i/4 - 1
+			for ; col >= i/4; col-- {
 				fmt.Printf("%d ", matrix[row][col])
 			}
 		} else if n == 3 {
 			// Bottom to top
 			col = i / 4
-			row = height - i / 4 - 2
-			for ; row > i / 4; row-- {
+			row = height - i/4 - 2
+			for ; row > i/4; row-- {
 				fmt.Printf("%d ", matrix[row][col])
 			}
 		}
