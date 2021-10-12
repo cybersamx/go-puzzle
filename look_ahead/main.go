@@ -20,6 +20,7 @@ func substring(s string, start int, length int) string {
 	return s[start:length]
 }
 
+// matchingWords is original implementation.
 func matchingWords(str string) []string {
 	var matches []string
 
@@ -46,6 +47,22 @@ func matchingWords(str string) []string {
 	return matches
 }
 
+// lookup does the matching using the [] operator.
+func lookup(text string) []string {
+	n := len(text)
+	var matches []string
+
+	for _, word := range lookupTable {
+		if len(word) >= n {
+			if word[:n] == text {
+				matches = append(matches, word)
+			}
+		}
+	}
+
+	return matches
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -54,7 +71,7 @@ func main() {
 		fmt.Println("You entered:", str)
 
 		fmt.Println("Matching:")
-		matches := matchingWords(str)
+		matches := lookup(str)
 
 		for _, match := range matches {
 			fmt.Println(match)
