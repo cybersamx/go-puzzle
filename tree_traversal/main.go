@@ -54,7 +54,8 @@ func depthFirstDump(n *TreeNode) {
 
 func breathFirstDump(n *TreeNode) {
 	// Create queue to push tree nodes
-	var queue = Queue{}
+	queue := Queue{}
+
 	queue.Push(n)
 
 	for queue.Length > 0 {
@@ -66,6 +67,7 @@ func breathFirstDump(n *TreeNode) {
 		if current.Left != nil {
 			queue.Push(current.Left)
 		}
+
 		if current.Right != nil {
 			queue.Push(current.Right)
 		}

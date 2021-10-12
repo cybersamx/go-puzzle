@@ -57,14 +57,11 @@ func checkSquareMatri(matrix [][]int) bool {
 		if row > 0 && width != len(matrix[row]) {
 			return false
 		}
+
 		width = len(matrix[row])
 	}
 
-	if width != len(matrix) {
-		return false
-	}
-
-	return true
+	return width == len(matrix)
 }
 
 func spiralTraverse(matrix [][]int) {
@@ -86,6 +83,7 @@ func spiralTraverse(matrix [][]int) {
 			// Left to right
 			col = i / 4
 			row = i / 4
+
 			for ; col < width-i/4; col++ {
 				fmt.Printf("%d ", matrix[row][col])
 			}

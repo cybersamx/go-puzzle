@@ -6,8 +6,9 @@ import (
 )
 
 func compress(str string) string {
-	runes := []rune(str)
 	var sb strings.Builder
+
+	runes := []rune(str)
 	count := 1
 
 	for i, ch := range runes {

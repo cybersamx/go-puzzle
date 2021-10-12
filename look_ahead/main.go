@@ -37,6 +37,7 @@ func matchingWords(str string) []string {
 
 		a := substring(str, 0, strSize)
 		b := substring(word, 0, strSize)
+
 		if a == b {
 			matches = append(matches, word)
 		}
@@ -51,8 +52,10 @@ func main() {
 	for scanner.Scan() {
 		str := scanner.Text()
 		fmt.Println("You entered:", str)
+
 		fmt.Println("Matching:")
 		matches := matchingWords(str)
+
 		for _, match := range matches {
 			fmt.Println(match)
 		}

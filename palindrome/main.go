@@ -9,15 +9,14 @@ func isPalindrome(s string) bool {
 		return false
 	}
 
-	var i int
-	var j int
-	mid := int(length / 2)
+	var i, j int
+
+	mid := length / 2
 
 	if length%2 == 0 {
 		// Even
 		i = mid
 		j = mid - 1
-
 	} else {
 		// Odd
 		i = mid + 1
