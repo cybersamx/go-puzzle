@@ -11,5 +11,7 @@ func factorial(n int) int {
 }
 
 func main() {
-	fmt.Println(factorial(5))
+	for i := 0; i < 9; i++ {
+		fmt.Printf("%d! = %d\n", i, factorial(i))
+	}
 }

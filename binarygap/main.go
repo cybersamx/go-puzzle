@@ -7,21 +7,25 @@ import "fmt"
 
 func binarygap(n int) int {
 	// Convert to binary as a slice of runes.
-	binStr := fmt.Sprintf("%b", n)
+	bin := fmt.Sprintf("%b", n)
 
 	// Now count the number of zeros/sequences
 	count := 0
 	maxCount := 0
 
-	for i, ch := range binStr {
+	// 3 conditions:
+	// 1. if 1 -> 0, reset count.
+	// 2. if 0 -> 1, check if the sequence is longer than the previous one.
+	// 3. if 0, increment count.
+	for i, ch := range bin {
 		if ch == '0' {
-			if i > 0 && []rune(binStr)[i-1] != ch {
+			if i > 0 && []rune(bin)[i-1] != ch {
 				count = 0
 			}
 
 			count++
 		} else if ch == '1' {
-			if i > 0 && []rune(binStr)[i-1] != ch {
+			if i > 0 && []rune(bin)[i-1] != ch {
 				if count > maxCount {
 					maxCount = count
 				}
